@@ -1,0 +1,12 @@
+name: Update gerEFI Reference
+
+on:
+  schedule:
+    - cron: '5 17 * * *' # update gerEFI reference daily at 5:05 pm
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    uses: gerefi/gerefi/.github/workflows/custom-board-update-gerefi-reference.yaml@master
+    permissions:
+      contents: write
